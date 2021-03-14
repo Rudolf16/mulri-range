@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { useEffect, useState } from 'react'
+import Search from "./Search"
+export default function App() {
+  const [count,setCount]=useState(0)
+  const [count2,setCount2]=useState(0)
+  const data=["spring","summer","winter"]
+  return(
+    <>  
+        <Search style={{marginBottom:"20px"}} min={1} max={12} onChange={(target)=>setCount(target)}/>
+        <Search data={data} onChange={(target)=>setCount2(target)}/>
+       <div>{count}</div>
+       <div>{count2}</div>
+    </>
+   
+  )
 }
 
-export default App;
+
+
+// max={second} min={0}  onChange={(e)=>setFirst(e.target.value)}
+// 
